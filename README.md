@@ -9,7 +9,7 @@
   <a href="#quick-start">Self-host in 2 minutes</a>
 </p>
 
-> **Status: early release (v0.1).** Works end to end; expect rough edges. Prefer no set-up? Use the hosted version at **[datafluxor.com](https://datafluxor.com/?utm_source=github&utm_medium=readme&utm_campaign=datafluxor-seo)**.
+> **Status: early release ([v0.1.0](https://github.com/datafluxor/datafluxor-seo/releases/latest)).** Works end to end; expect rough edges. Prefer no set-up? Use the hosted version at **[datafluxor.com](https://datafluxor.com/?utm_source=github&utm_medium=readme&utm_campaign=datafluxor-seo)**.
 
 ## Two ways to use it
 
@@ -79,7 +79,9 @@ Your data is one SQLite file in the `dfseo-data` volume. Back it up with `docker
 
 ### Without Docker
 
-Needs Go 1.26+ and Node 22+:
+Download the archive for Linux, macOS or Windows from the [latest release](https://github.com/datafluxor/datafluxor-seo/releases/latest), unpack it and run `./datafluxor-seo`. It prints the setup code; open http://localhost:8080.
+
+To build from source (Go 1.26+ and Node 22+):
 
 ```bash
 make            # builds the web app and bin/datafluxor-seo
