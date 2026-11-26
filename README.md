@@ -9,7 +9,7 @@
   <a href="#quick-start">Self-host in 2 minutes</a>
 </p>
 
-> **Status: first release in progress.** The code is being published here now; until the first tagged release, use the hosted version at **[datafluxor.com](https://datafluxor.com/?utm_source=github&utm_medium=readme&utm_campaign=datafluxor-seo)**.
+> **Status: early release (v0.1).** Works end to end; expect rough edges. Prefer no set-up? Use the hosted version at **[datafluxor.com](https://datafluxor.com/?utm_source=github&utm_medium=readme&utm_campaign=datafluxor-seo)**.
 
 ## Two ways to use it
 
@@ -40,13 +40,51 @@ docker compose logs | grep "setup code"
 - **Search Console:** connect your own Google account to see clicks, impressions, CTR and average position by query, page, country and device.
 
 **With a DataFluxor API key**
-- **Rank tracking:** daily Google positions for your keywords by country and device, history, movers, SERP features (AI Overview, featured snippet, local pack) and a cross-check against Search Console.
+- **Rank tracking:** daily Google positions for your keywords by country and device, position history chart, winners and losers, the full results page for each check, SERP features (AI Overview, featured snippet, local pack) and CSV export.
 - **Google results:** the live top results for any search, with People Also Ask and AI Overview.
-- **Keyword research:** search volume, CPC, difficulty and keyword ideas.
-- **AI answers:** whether ChatGPT, Perplexity, Gemini and Google AI Overviews mention your brand.
-- **Domain overview and backlinks.**
+- **Keyword research and metrics:** search volume, CPC, difficulty and keyword ideas.
+- **AI answers:** whether ChatGPT, Perplexity, Gemini and Google AI Overviews mention your brand and your competitors, and which sites they cite.
+- **Domain overview and backlinks** (the Common Crawl linking-domains view is free).
 
-Every paid call shows its credit cost, and you can set a monthly credit cap.
+### What it costs
+
+The app is free. Data calls use DataFluxor credits from your account:
+
+| Action | Credits |
+|---|---|
+| Rank check or Google results page | 5 (a page fetched in the last 12 hours is reused free) |
+| AI answer check | 5 |
+| Keyword metrics | about 1 per keyword |
+| Keyword research | from 40 per search |
+| Domain overview | 15-100 |
+| Backlinks | 60 (free Common Crawl view: 0) |
+
+Expensive tools show the price and ask before charging. Settings has a monthly credit limit for the daily rank checks.
+
+## Running it on a server
+
+`docker-compose.yml` publishes the app on `127.0.0.1:8080` only. Put it behind a web server that adds HTTPS, for example Caddy:
+
+```
+seo.example.com {
+    reverse_proxy 127.0.0.1:8080
+}
+```
+
+and set `DFSEO_PUBLIC_URL=https://seo.example.com` in `.env` (copy `.env.example`). With an `https` address the sign-in cookie is sent over HTTPS only.
+
+Your data is one SQLite file in the `dfseo-data` volume. Back it up with `docker compose cp datafluxor-seo:/data ./backup`.
+
+**Search Console:** see [docs/search-console.md](docs/search-console.md) to create the Google sign-in client (about five minutes).
+
+### Without Docker
+
+Needs Go 1.26+ and Node 22+:
+
+```bash
+make            # builds the web app and bin/datafluxor-seo
+./bin/datafluxor-seo
+```
 
 ## Configuration
 
@@ -56,6 +94,18 @@ Every paid call shows its credit cost, and you can set a monthly credit cap.
 | `DFSEO_DATA_DIR` | `./data` | Where the database is kept |
 | `DATAFLUXOR_API_KEY` | – | Optional: set the API key here instead of in Settings |
 | `GOOGLE_CLIENT_ID` / `GOOGLE_CLIENT_SECRET` | – | Optional: your Google OAuth client for Search Console |
+| `DFSEO_ADDR` | `:8080` | Listen address |
+| `DFSEO_CRAWL_MAX_PAGES` | `5000` | Largest site audit a user can start |
+| `DFSEO_CRAWL_ALLOW_PRIVATE` | `false` | Allow audits of private network addresses (intranet sites) |
+
+## Development
+
+```bash
+go test ./...                 # server tests
+cd web && npm ci && npm run dev   # web app with hot reload, proxied to a server on :8080
+```
+
+Issues and pull requests are welcome: see [CONTRIBUTING.md](CONTRIBUTING.md). Report security problems privately: [SECURITY.md](SECURITY.md).
 
 ## Licence
 

@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+      
+      viewBox="0 0 240 280"
+      role="img"
+      aria-label="Flux, the DataFluxor mascot: a friendly purple robot waving hello"
+    >
+      <defs>
+        <linearGradient id="flux-body" x1="40" y1="40" x2="200" y2="240" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stop-color="#9a6bf0" />
+          <stop offset="0.55" stop-color="#6d3fd0" />
+          <stop offset="1" stop-color="#4a2196" />
+        </linearGradient>
+        <linearGradient id="flux-limb" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#8b5ce0" />
+          <stop offset="1" stop-color="#5528ae" />
+        </linearGradient>
+        <radialGradient id="flux-screen" cx="0.5" cy="0.35" r="0.8">
+          <stop offset="0" stop-color="#3a2650" />
+          <stop offset="1" stop-color="#1a1226" />
+        </radialGradient>
+        <radialGradient id="flux-glow" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="0" stop-color="#d3f778" stop-opacity="0.9" />
+          <stop offset="1" stop-color="#d3f778" stop-opacity="0" />
+        </radialGradient>
+      </defs>
+
+      {/* ground shadow */}
+      <ellipse cx="120" cy="262" rx="56" ry="8" fill="#221830" opacity="0.14" />
+
+      {/* floating data bits */}
+      <g aria-hidden="true">
+        <rect x="24" y="62" width="14" height="14" rx="4" fill="#d3f778" stroke="#221830" stroke-width="2.5" />
+        <circle cx="212" cy="66" r="7" fill="#9061d0" />
+        <path d="M30 176v12M24 182h12" stroke="#6d3fd0" stroke-width="3.5" stroke-linecap="round" />
+        <rect x="204" y="196" width="11" height="11" rx="3" fill="none" stroke="#6d3fd0" stroke-width="3" />
+        <circle cx="52" cy="34" r="4.5" fill="#d3f778" stroke="#221830" stroke-width="2" />
+      </g>
+
+      <g>
+        {/* antenna */}
+        <path d="M120 62V38" stroke="#4a2196" stroke-width="6" stroke-linecap="round" />
+        <circle cx="120" cy="30" r="20" fill="url(#flux-glow)" />
+        <circle cx="120" cy="30" r="9" fill="#d3f778" stroke="#221830" stroke-width="3" />
+
+        {/* ears */}
+        <circle cx="46" cy="116" r="13" fill="#4a2196" />
+        <circle cx="46" cy="116" r="5" fill="#d3f778" />
+        <circle cx="194" cy="116" r="13" fill="#4a2196" />
+        <circle cx="194" cy="116" r="5" fill="#d3f778" />
+
+        {/* feet */}
+        <rect x="88" y="232" width="28" height="20" rx="10" fill="#33213f" />
+        <rect x="124" y="232" width="28" height="20" rx="10" fill="#33213f" />
+
+        {/* body */}
+        <rect x="80" y="164" width="80" height="76" rx="30" fill="url(#flux-body)" />
+        <path d="M92 176c8-6 22-8 34-6" stroke="#fff" stroke-opacity="0.28" stroke-width="5" stroke-linecap="round" fill="none" />
+        <circle cx="120" cy="204" r="21" fill="#221830" />
+        <path
+          transform="translate(120 204) scale(0.68) translate(-24.2 -24)"
+          d="M8.7 10.6H26.4A13.4 13.4 0 0 1 26.4 37.4H13.7a0.45 0.45 0 0 1 -.1 -0.9C18.21 35.13 21.28 32.8 26.4 32.8A8.8 8.8 0 0 0 26.4 15.2C19.28 15.2 15.01 12.87 8.6 11.5a0.45 0.45 0 0 1 .1 -0.9Z"
+          fill="#d3f778"
+        />
+
+        {/* left arm */}
+        <path d="M86 184C68 192 60 208 58 226" stroke="url(#flux-limb)" stroke-width="13" stroke-linecap="round" fill="none" />
+        <circle cx="57" cy="230" r="10" fill="#f1ebfc" stroke="#6d3fd0" stroke-width="3" />
+
+        {/* waving arm */}
+        <g>
+          <path d="M154 190C186 196 212 182 218 152" stroke="url(#flux-limb)" stroke-width="13" stroke-linecap="round" fill="none" />
+          <circle cx="219" cy="145" r="10.5" fill="#f1ebfc" stroke="#6d3fd0" stroke-width="3" />
+        </g>
+
+        {/* head */}
+        <rect x="52" y="60" width="136" height="112" rx="44" fill="url(#flux-body)" />
+        <path d="M70 84c10-14 30-20 48-18" stroke="#fff" stroke-opacity="0.35" stroke-width="6" stroke-linecap="round" fill="none" />
+
+        {/* face screen */}
+        <rect x="66" y="78" width="108" height="76" rx="32" fill="url(#flux-screen)" />
+        <g>
+          <rect x="90" y="98" width="20" height="30" rx="10" fill="#d3f778" />
+          <rect x="130" y="98" width="20" height="30" rx="10" fill="#d3f778" />
+          <circle cx="96" cy="106" r="3.6" fill="#fff" />
+          <circle cx="136" cy="106" r="3.6" fill="#fff" />
+        </g>
+        <path d="M108 138c7 8 17 8 24 0" stroke="#d3f778" stroke-width="4.5" stroke-linecap="round" fill="none" />
+        <circle cx="82" cy="136" r="5.5" fill="#c59bff" opacity="0.55" />
+        <circle cx="158" cy="136" r="5.5" fill="#c59bff" opacity="0.55" />
+      </g>
+    </svg>

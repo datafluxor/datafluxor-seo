@@ -7,3 +7,5 @@ node_modules/
 *.db
 *.db-*
 .DS_Store
+/internal/server/dist/*
+!/internal/server/dist/.gitkeep

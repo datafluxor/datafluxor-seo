@@ -1,0 +1,82 @@
+{
+ "query": "serp api",
+ "country": "US",
+ "language": "en",
+ "total_results": 10,
+ "items": [
+  {
+   "position": 1,
+   "url": "https://serpapi.com/",
+   "domain": "serpapi.com",
+   "title": "SerpApi: Google Search API"
+  },
+  {
+   "position": 2,
+   "url": "https://brightdata.com/products/serp-api",
+   "domain": "brightdata.com",
+   "title": "SERP API - 5K Requests/Month for Free"
+  },
+  {
+   "position": 3,
+   "url": "https://dataforseo.com/apis/serp-api",
+   "domain": "dataforseo.com",
+   "title": "SERP API You Can Trust: DataForSEO Always Works."
+  },
+  {
+   "position": 4,
+   "url": "https://you.com/resources/what-is-a-serp-api",
+   "domain": "you.com",
+   "title": "What Is a SERP API? How It Works and When to Switch"
+  },
+  {
+   "position": 5,
+   "url": "https://scrapfly.io/blog/posts/google-serp-api-and-alternatives",
+   "domain": "scrapfly.io",
+   "title": "Best SERP APIs in 2026: Official Google Alternatives & ..."
+  },
+  {
+   "position": 6,
+   "url": "https://github.com/serpapi",
+   "domain": "github.com",
+   "title": "SerpApi"
+  },
+  {
+   "position": 7,
+   "url": "https://www.scraperapi.com/web-scraping/best-web-scraping-apis/google-serp-api/",
+   "domain": "www.scraperapi.com",
+   "title": "Top 7 Google SERP APIs for Google Data Scraping in 2026"
+  },
+  {
+   "position": 8,
+   "url": "https://aws.amazon.com/marketplace/pp/prodview-oc3e6frtcvcja",
+   "domain": "aws.amazon.com",
+   "title": "Serp API by Bright Data | AWS Marketplace"
+  },
+  {
+   "position": 9,
+   "url": "https://searlo.tech/what-is-serp-api",
+   "domain": "searlo.tech",
+   "title": "What Is a SERP API? Developer Guide (2026)"
+  },
+  {
+   "position": 10,
+   "url": "https://medium.com/@darshankhandelwal12/google-serp-api-everything-you-need-to-know-e9ae28fd86ef",
+   "domain": "medium.com",
+   "title": "Google SERP API: Everything You Need To Know"
+  }
+ ],
+ "people_also_ask": [
+  "What does SerpApi stand for?",
+  "Is SerpApi legal?",
+  "Is SerpApi free to use?",
+  "Does ChatGPT use SerpApi?"
+ ],
+ "has_local_pack": false,
+ "has_featured_snippet": false,
+ "has_knowledge_panel": false,
+ "has_ai_overview": true,
+ "cache_hit": true,
+ "credits_used": 0,
+ "complete": true,
+ "status": "ok"
+}
