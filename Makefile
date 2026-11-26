@@ -7,7 +7,6 @@ all: web build
 
 web:
 	cd web && npm ci && npm run build
-	touch internal/server/dist/.gitkeep
 
 build:
 	CGO_ENABLED=0 go build -trimpath -ldflags "$(LDFLAGS)" -o bin/datafluxor-seo ./cmd/datafluxor-seo
