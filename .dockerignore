@@ -1,0 +1,13 @@
+# Keep secrets, data and local builds out of the image build.
+.env
+.env.*
+!.env.example
+data/
+bin/
+.git/
+web/node_modules/
+internal/server/dist/assets/
+internal/server/dist/index.html
+*.db
+*.db-*
+.DS_Store

@@ -4,6 +4,7 @@ import (
 	"context"
 	"database/sql"
 	"errors"
+	"math"
 	"time"
 )
 
@@ -137,16 +138,16 @@ func scanAudit(sc interface{ Scan(...any) error }) (Audit, error) {
 	return a, nil
 }
 
-// HealthScore turns issue counts into a 0-100 score: errors weigh most, and
-// the score is relative to the number of pages so big sites are not punished
-// for being big.
+// HealthScore turns issue counts into a 0-100 score. Issues are weighed
+// (an error 1, a warning 0.25, a notice 0.05) and divided by the number of
+// pages, so big sites are not punished for being big; the penalty then
+// flattens out, so a small site with a few warnings is not scored near zero.
 func HealthScore(pages int, c Counts) int {
-	penalty := (float64(c.Errors)*3 + float64(c.Warnings) + float64(c.Notices)*0.2) / float64(pages) * 25
-	score := 100 - int(penalty+0.5)
-	if score < 0 {
-		return 0
+	if pages < 1 {
+		pages = 1
 	}
-	return score
+	load := (float64(c.Errors) + float64(c.Warnings)*0.25 + float64(c.Notices)*0.05) / float64(pages)
+	return int(math.Round(100 * math.Exp(-0.6*load)))
 }
 
 // Audits lists a project's audits, newest first.
