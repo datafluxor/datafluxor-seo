@@ -1,0 +1,9 @@
+/data/
+/datafluxor-seo
+/bin/
+node_modules/
+/web/dist/
+.env
+*.db
+*.db-*
+.DS_Store
